@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "OhMyFood Restaurant Order",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aslancaglar/OhMyFood.git"
+  },
+  "author": "Caglar Aslan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aslancaglar/OhMyFood/issues"
+  },
+  "homepage": "https://github.com/aslancaglar/OhMyFood#readme"
+}

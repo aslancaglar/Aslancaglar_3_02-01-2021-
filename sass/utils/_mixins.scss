@@ -1,0 +1,22 @@
+@mixin shadow_inside {
+    box-shadow: inset 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin shadow_outside {
+    box-shadow: 0px 0.7px 0.7px rgba(0, 0, 0, 0.024), 0px 1.5px 1.7px rgba(0, 0, 0, 0.04), 0px 2.5px 3.5px rgba(0, 0, 0, 0.052), 0px 4.2px 7.3px rgba(0, 0, 0, 0.066), 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@mixin btn {
+    display: block;
+    background: rgb(173, 95, 220);
+    background: linear-gradient(0deg, rgba(173, 95, 220, 1) 0%, rgba(238, 116, 218, 1) 100%);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 25px;
+    @include shadow_outside;
+}
+
+@mixin flex_column {
+    display: flex;
+    flex-direction: column;
+}

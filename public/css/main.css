@@ -1,4 +1,4 @@
-@import url(/Users/caslan/Desktop/OhMyFood/sass/vendors/normalize.css);
+@import url(/Users/caslan/Desktop/OMF/sass/vendors/normalize.css);
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
   margin: 0;
@@ -28,6 +28,32 @@ body {
 
 .header__logo {
   width: 165px;
+}
+
+.footer {
+  padding: 30px 25px;
+  background-color: #353535;
+  color: #fff;
+}
+
+.footer img {
+  width: 120px;
+  -webkit-filter: invert(97%) sepia(100%) saturate(2%) hue-rotate(226deg) brightness(103%) contrast(101%);
+          filter: invert(97%) sepia(100%) saturate(2%) hue-rotate(226deg) brightness(103%) contrast(101%);
+  margin: 0 0 15px 0;
+}
+
+.footer__menu li {
+  margin: 0 0 10px 0;
+}
+
+.footer__menu li i {
+  width: 15px;
+  margin: 0 10px 0 0;
+}
+
+.footer__menu li a {
+  color: inherit;
 }
 
 .location_pick {
@@ -143,6 +169,10 @@ body {
 .restaurants {
   padding: 50px 15px;
   background-color: #f6f6f6;
+}
+
+.restaurants h2 {
+  margin: 0 0 30px 0;
 }
 
 .restaurants .restaurantsList {

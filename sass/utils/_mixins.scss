@@ -3,7 +3,7 @@
 }
 
 @mixin shadow_outside {
-    box-shadow: 0px 0.7px 0.7px rgba(0, 0, 0, 0.024), 0px 1.5px 1.7px rgba(0, 0, 0, 0.04), 0px 2.5px 3.5px rgba(0, 0, 0, 0.052), 0px 4.2px 7.3px rgba(0, 0, 0, 0.066), 0px 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 @mixin btn {
@@ -21,10 +21,26 @@
     flex-direction: column;
 }
 
+@mixin flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @mixin fill_logo {
     filter: invert(97%) sepia(100%) saturate(2%) hue-rotate(226deg) brightness(103%) contrast(101%);
 }
 
 @mixin section_title {
     margin: 0 0 30px 0;
+}
+
+@mixin new_badge {
+    background-color: $tertiary_color;
+    color: (darken($tertiary_color, 40%));
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
 }

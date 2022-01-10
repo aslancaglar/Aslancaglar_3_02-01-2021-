@@ -2,9 +2,7 @@
     background-color: #eaeaea;
     height: 50px;
     @include shadow_inside;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex_center;
     color: #353535;
     & span {
         font-weight: 400;
@@ -15,23 +13,28 @@
 }
 
 .hero {
-    display: flex;
+    @include flex_column;
     padding: 40px;
     align-items: center;
-    flex-direction: column;
     height: 290px;
     background-color: $bg_color2;
     text-align: center;
     &__description {
         margin: 20px 0 35px 0;
     }
+    &__btn {
+        transform: scale(1);
+        transition: transform 400ms;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
 
 .fonctionnement {
     width: 100%;
     padding: 50px 15px;
-    display: flex;
-    flex-direction: column;
+    @include flex_column;
     & h2 {
         @include section_title;
     }
@@ -63,7 +66,7 @@
         }
         &::before {
             content: counter(stepnumbers);
-            color: #fff;
+            color: $text_color2;
             font-size: 14px;
             position: absolute;
             left: -10px;
@@ -94,7 +97,11 @@
         overflow: hidden;
         @include shadow_outside;
         text-decoration: none;
-        color: black;
+        color: inherit;
+        position: relative;
+        .new_badge {
+            @include new_badge;
+        }
         & img {
             object-fit: cover;
             height: 175px;

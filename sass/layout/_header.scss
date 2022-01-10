@@ -9,9 +9,10 @@
     &__logo {
         width: 165px;
     }
-    & i {
+    & a {
         position: absolute;
         left: 15px;
         font-size: 18px;
+        color: $text_color1;
     }
 }

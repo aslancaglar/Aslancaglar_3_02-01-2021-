@@ -36,10 +36,11 @@ body {
   width: 165px;
 }
 
-.header i {
+.header a {
   position: absolute;
   left: 15px;
   font-size: 18px;
+  color: #000;
 }
 
 .footer {

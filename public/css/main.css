@@ -297,8 +297,8 @@ body {
 }
 
 .loaderwrap {
-  -webkit-animation: loader 3s 1;
-          animation: loader 3s 1;
+  -webkit-animation: loader 3s;
+          animation: loader 3s;
   visibility: hidden;
   background-color: #fff;
   width: 100%;
@@ -318,6 +318,9 @@ body {
 }
 
 .lds-ring {
+  -webkit-animation: loaderopacity 2.5s;
+          animation: loaderopacity 2.5s;
+  visibility: hidden;
   display: inline-block;
   width: 80px;
   height: 80px;
@@ -392,6 +395,28 @@ body {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes loaderopacity {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes loaderopacity {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

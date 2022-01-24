@@ -6,10 +6,14 @@
             box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
         }
         
+        @mixin btnbg {
+            background: rgb(173, 95, 220);
+            background: linear-gradient(0deg, #ad5fdc 0%, #ee74da 100%);
+        }
+        
         @mixin btn {
             display: block;
-            background: rgb(173, 95, 220);
-            background: linear-gradient(0deg, rgba(173, 95, 220, 1) 0%, rgba(238, 116, 218, 1) 100%);
+            @include btnbg;
             color: #fff;
             padding: 15px 20px;
             border-radius: 25px;
@@ -50,12 +54,29 @@
         @mixin heart {
             position: absolute;
             font-size: 28px;
-            cursor: pointer;
+            z-index: 0;
             &:hover {
+                opacity: 1;
+            }
+            &:hover::after {
+                opacity: 1;
+            }
+            &::after {
+                transition: all 400ms;
+                z-index: 1;
+                opacity: 0;
+                font-family: "Font Awesome 5 Free";
+                content: "\f004";
+                display: inline-block;
+                font-weight: 900;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
                 background-image: linear-gradient($primary_color, $secondary_color);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
-                font-weight: 900;
             }
         }

@@ -125,8 +125,12 @@ body {
 }
 
 .hero__btn:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1)) !important;
+  background: linear-gradient(0deg, #a16be0, #ff93e1) !important;
+  -webkit-box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .fonctionnement {
@@ -260,16 +264,135 @@ body {
   top: 25px;
   position: absolute;
   font-size: 28px;
-  cursor: pointer;
+  z-index: 0;
 }
 
 .restaurants .restaurantsList__card .card__info i:hover {
+  opacity: 1;
+}
+
+.restaurants .restaurantsList__card .card__info i:hover::after {
+  opacity: 1;
+}
+
+.restaurants .restaurantsList__card .card__info i::after {
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  z-index: 1;
+  opacity: 0;
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  display: inline-block;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background-image: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 900;
+}
+
+.loaderwrap {
+  -webkit-animation: loader 3s 1;
+          animation: loader 3s 1;
+  visibility: hidden;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid white;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #9356DC transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .btn {

@@ -7,6 +7,13 @@
         @include fill_logo;
         margin: 0 0 15px 0;
     }
+    &__menu {
+        @include desktop {
+            display: flex;
+            column-gap: 20px;
+            ;
+        }
+    }
     &__menu li {
         margin: 0 0 10px 0;
         & i {

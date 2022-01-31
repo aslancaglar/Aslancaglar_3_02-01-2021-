@@ -16,6 +16,12 @@ body {
   color: #000;
 }
 
+/*
+.main_container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+*/
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,6 +60,16 @@ body {
   -webkit-filter: invert(97%) sepia(100%) saturate(2%) hue-rotate(226deg) brightness(103%) contrast(101%);
           filter: invert(97%) sepia(100%) saturate(2%) hue-rotate(226deg) brightness(103%) contrast(101%);
   margin: 0 0 15px 0;
+}
+
+@media only screen and (min-width: 992px) {
+  .footer__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
 }
 
 .footer__menu li {
@@ -95,6 +111,12 @@ body {
 
 .restaurant__coverphoto {
   height: 260px;
+}
+
+@media only screen and (min-width: 992px) {
+  .restaurant__coverphoto {
+    height: 360px;
+  }
 }
 
 .restaurant img {
@@ -190,8 +212,7 @@ body {
 }
 
 .restaurant__menu .food__price {
-  float: right;
-  margin-right: 5px;
+  margin-right: 0px;
   font-weight: inherit !important;
 }
 
@@ -202,6 +223,23 @@ body {
 
 .restaurant__menu .food__info h3 {
   margin-bottom: 5px;
+}
+
+.restaurant__menu .food__info .desc {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.restaurant__menu .food__info .desc :first-child {
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .restaurant__menu .food__info span {
@@ -307,5 +345,34 @@ body {
     opacity: 1;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .foodlist {
+    width: 33%;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+
+.foodlist_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 992px) {
+  .foodlist_container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
   }
 }

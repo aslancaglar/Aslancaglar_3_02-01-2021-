@@ -9,6 +9,9 @@
     @include flex_column;
     &__coverphoto {
         height: $coverphoto_height;
+        @include desktop {
+            height: 360px;
+        }
     }
     & img {
         height: 100%;
@@ -56,8 +59,7 @@
             @include shadow_outside;
             margin-bottom: 15px;
             &__price {
-                float: right;
-                margin-right: 5px;
+                margin-right: 0px;
                 font-weight: inherit !important;
             }
             &__info {
@@ -65,7 +67,17 @@
                 width: 100%;
                 & h3 {
                     margin-bottom: 5px;
-                    ;
+                }
+                & .desc {
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: space-between;
+                     :first-child {
+                        white-space: nowrap;
+                        display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
                 & span {
                     font-weight: 200;
@@ -131,5 +143,20 @@
     to {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+.foodlist {
+    @include desktop {
+        width: 33%;
+        column-gap: 20px;
+    }
+}
+
+.foodlist_container {
+    @include flex_column;
+    @include desktop {
+        flex-direction: row;
+        column-gap: 20px;
     }
 }

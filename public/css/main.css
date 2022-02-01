@@ -515,4 +515,19 @@ body {
   text-align: center;
   -webkit-box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1)) !important;
+  background: linear-gradient(0deg, #a16be0, #ff93e1) !important;
+  -webkit-box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.3);
 }

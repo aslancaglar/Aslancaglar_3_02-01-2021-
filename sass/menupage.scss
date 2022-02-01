@@ -35,6 +35,11 @@
             right: 38px;
             @include heart;
         }
+        .foodlist ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
         .foodlist__title {
             font-weight: 100;
             text-transform: uppercase;
@@ -55,62 +60,72 @@
             background-color: $bg_color1;
             cursor: pointer;
             border-radius: $radius;
+            display: flex;
             overflow: hidden;
+            justify-content: space-between;
             @include shadow_outside;
-            margin-bottom: 15px;
-            &__price {
-                margin-right: 0px;
-                font-weight: inherit !important;
-            }
             &__info {
-                padding: 12px 15px;
-                width: 100%;
-                & h3 {
-                    margin-bottom: 5px;
-                }
-                & .desc {
-                    overflow: hidden;
-                    display: flex;
-                    justify-content: space-between;
-                     :first-child {
-                        white-space: nowrap;
-                        display: block;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                }
-                & span {
-                    font-weight: 200;
-                }
-            }
-            &__checked {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 0px;
-                background-color: $tertiary_color;
-                height: 100%;
-                transition: 400ms;
-                & i {
-                    color: #fff;
-                    font-size: 22px;
-                    visibility: hidden;
-                    transform: rotate(180deg);
-                    transition: 200ms;
+                justify-content: space-between;
+                padding: 15px;
+                width: 100%;
+                &__text {
+                    display: flex;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    line-height: 1.1em;
+                    & h3 {
+                        margin-bottom: 5px;
+                        overflow: hidden !important;
+                        text-overflow: ellipsis !important;
+                    }
+                    & p {
+                        overflow: hidden !important;
+                        text-overflow: ellipsis !important;
+                    }
                 }
             }
             & a {
                 color: inherit;
                 display: flex;
-                height: 70px;
+                width: 100%;
                 justify-content: space-between;
+                .checked {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    max-width: 0px;
+                    min-width: 0px;
+                    flex-shrink: 0;
+                    background-color: $tertiary_color;
+                    height: 100%;
+                    transition: 400ms;
+                    & i {
+                        color: #fff;
+                        font-size: 22px;
+                        visibility: hidden;
+                        transform: rotate(180deg);
+                        transition: 200ms;
+                    }
+                }
+                .food__price {
+                    display: flex;
+                    align-items: flex-end;
+                    font-weight: 600 !important;
+                }
             }
-            & a:hover>.food__checked {
-                width: 60px;
+            & a:hover>.checked {
+                min-width: 15%;
+                max-width: 0px;
             }
-            & a:hover>.food__checked i {
+            & a:hover>.checked i {
                 visibility: visible;
                 transform: rotate(0deg);
+            }
+            & a:hover>.food__info {
+                width: 85%;
             }
         }
     }
@@ -155,6 +170,7 @@
 
 .foodlist_container {
     @include flex_column;
+    row-gap: 38px;
     @include desktop {
         flex-direction: row;
         column-gap: 20px;

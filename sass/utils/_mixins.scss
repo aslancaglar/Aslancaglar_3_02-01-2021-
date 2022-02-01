@@ -1,88 +1,95 @@
-        @mixin shadow_inside {
-            box-shadow: inset 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
-        }
-        
-        @mixin shadow_outside {
-            box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
-        }
-        
-        @mixin btnbg {
-            background: rgb(173, 95, 220);
-            background: linear-gradient(0deg, #ad5fdc 0%, #ee74da 100%);
-        }
-        
-        @mixin btn {
-            display: block;
-            @include btnbg;
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 25px;
-            border: none;
-            text-align: center;
-            @include shadow_outside;
-        }
-        
-        @mixin flex_column {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        @mixin flex_center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        @mixin fill_logo {
-            filter: invert(97%) sepia(100%) saturate(2%) hue-rotate(226deg) brightness(103%) contrast(101%);
-        }
-        
-        @mixin section_title {
-            margin: 0 0 30px 0;
-        }
-        
-        @mixin new_badge {
-            background-color: $tertiary_color;
-            color: (darken($tertiary_color, 40%));
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        
-        @mixin heart {
-            position: absolute;
-            font-size: 28px;
-            z-index: 0;
-            &:hover {
-                opacity: 1;
+            @mixin shadow_inside {
+                box-shadow: inset 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
             }
-            &:hover::after {
-                opacity: 1;
+            
+            @mixin shadow_outside {
+                box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
             }
-            &::after {
-                transition: all 400ms;
-                z-index: 1;
-                opacity: 0;
-                font-family: "Font Awesome 5 Free";
-                content: "\f004";
-                display: inline-block;
-                font-weight: 900;
+            
+            @mixin btnbg {
+                background: rgb(173, 95, 220);
+                background: linear-gradient(0deg, #ad5fdc 0%, #ee74da 100%);
+            }
+            
+            @mixin btn {
+                display: block;
+                @include btnbg;
+                color: #fff;
+                padding: 15px 20px;
+                border-radius: 25px;
+                border: none;
+                text-align: center;
+                @include shadow_outside;
+                transform: scale(1);
+                transition: transform 400ms;
+                &:hover {
+                    transform: scale(1.05);
+                    background: linear-gradient(0deg, lighten($primary_color, 5), lighten($secondary_color, 5)) !important;
+                    box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.3);
+                }
+            }
+            
+            @mixin flex_column {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            @mixin flex_center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            @mixin fill_logo {
+                filter: invert(97%) sepia(100%) saturate(2%) hue-rotate(226deg) brightness(103%) contrast(101%);
+            }
+            
+            @mixin section_title {
+                margin: 0 0 30px 0;
+            }
+            
+            @mixin new_badge {
+                background-color: $tertiary_color;
+                color: (darken($tertiary_color, 40%));
                 position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                background-image: linear-gradient($primary_color, $secondary_color);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
+                right: 15px;
+                top: 15px;
+                padding: 5px 10px;
+                border-radius: 5px;
             }
-        }
-        
-        @mixin desktop {
-            @media only screen and (min-width: $desktop) {
-                @content;
+            
+            @mixin heart {
+                position: absolute;
+                font-size: 28px;
+                z-index: 0;
+                &:hover {
+                    opacity: 1;
+                }
+                &:hover::after {
+                    opacity: 1;
+                }
+                &::after {
+                    transition: all 400ms;
+                    z-index: 1;
+                    opacity: 0;
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f004";
+                    display: inline-block;
+                    font-weight: 900;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    background-image: linear-gradient($primary_color, $secondary_color);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
             }
-        }
+            
+            @mixin desktop {
+                @media only screen and (min-width: $desktop) {
+                    @content;
+                }
+            }

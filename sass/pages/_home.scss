@@ -120,7 +120,7 @@
            }
            & li {
                @include desktop {
-                   width: 25%;
+                   flex: 1;
                }
            }
        }

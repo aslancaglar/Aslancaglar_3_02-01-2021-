@@ -150,6 +150,11 @@
     animation-fill-mode: forwards;
 }
 
+.foodlist li:nth-child(4) {
+    animation-delay: 400ms;
+    animation-fill-mode: forwards;
+}
+
 @keyframes foodanim {
     from {
         opacity: 0;
